@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Informasi Pohon Keputusan C4.5</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style_c45.css') }}">
+</head>
+
+<body>
+    <div class="navigation">
+        <a href="/">🏠 Kembali Ke Portofolio</a>
+        <a href="/index_c45">🏠 Beranda</a>
+        <a href="/prediksi_c45">📊 Prediksi Stunting</a>
+        <a href="/informasi_c45">📊 Informasi Model C45</a>
+    </div>
+    <h1>Informasi Pohon Keputusan C4.5</h1>
+
+        <h2>Decision Tree Rules:</h2>
+        <div id="decision_tree_rules">
+            <ol>
+                {% for rule in rules %}
+                    <li>{{ rule }}</li>
+                {% endfor %}
+            </ol>
+        </div>
+
+        <!-- Seleksi Fitur -->
+        <h1 class="mt-4">⚙️ K-Fold Cross Validation & Confusion Matrix</h1>
+
+        <!-- Hasil Evaluasi Model -->
+        <h2 class="mt-4">📈 Hasil K-Fold Cross Validation</h2>
+
+        <table class="table table-hover table-bordered text-center">
+            <thead class="table-success">
+                <tr>
+                    <th>Fold</th>
+                    <th>TP</th>
+                    <th>FP</th>
+                    <th>FN</th>
+                    <th>TN</th>
+                    <th>Akurasi</th>
+                    <th>Presisi</th>
+                    <th>Recall</th>
+                    <th>F1-Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for result in results %}
+                <tr>
+                    <td>{{ result.fold }}</td>
+                    <td>{{ result.tp }}</td>
+                    <td>{{ result.fp }}</td>
+                    <td>{{ result.fn }}</td>
+                    <td>{{ result.tn }}</td>
+                    <td>{{ result.accuracy|round(4) }}</td>
+                    <td>{{ result.precision|round(4) }}</td>
+                    <td>{{ result.recall|round(4) }}</td>
+                    <td>{{ result.f1|round(4) }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <h2 class="mt-4">🏆 Best Model dari K-Fold</h2>
+        <table class="table table-hover table-bordered text-center">
+            <thead class="table-danger">
+                <tr>
+                    <th>Iterasi (Fold)</th>
+                    <th>TP</th>
+                    <th>FP</th>
+                    <th>FN</th>
+                    <th>TN</th>
+                    <th>Akurasi</th>
+                    <th>Presisi</th>
+                    <th>Recall</th>
+                    <th>F1-Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{ best_fold }}</td>
+                    <td>{{ best_metrics['TP'] }}</td>
+                    <td>{{ best_metrics['FP'] }}</td>
+                    <td>{{ best_metrics['FN'] }}</td>
+                    <td>{{ best_metrics['TN'] }}</td>
+                    <td>{{ best_metrics['Akurasi']|round(4) }}</td>
+                    <td>{{ best_metrics['Presisi']|round(4) }}</td>
+                    <td>{{ best_metrics['Recall']|round(4) }}</td>
+                    <td>{{ best_metrics['F1-Score']|round(4) }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Confusion Matrix -->
+        <h2 class="mt-4">🎯 Confusion Matrix</h2>
+        <div class="text-center">
+            <img class="confusion-matrix" src="{{ url_for('static', filename='img/cm_c45.png') }}" alt="Confusion Matrix">
+        </div>
+
+        <h2 class="mt-4">📊 Agregasi K-Fold Cross Validation</h2>
+        <table class="table table-hover table-bordered text-center">
+            <thead class="table-info">
+                <tr>
+                    <th>Rata-rata Akurasi</th>
+                    <th>Rata-rata Presisi</th>
+                    <th>Rata-rata Recall</th>
+                    <th>Rata-rata F1-Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{ kfold_aggregates['Rata-rata Akurasi']|round(4) }}</td>
+                    <td>{{ kfold_aggregates['Rata-rata Presisi']|round(4) }}</td>
+                    <td>{{ kfold_aggregates['Rata-rata Recall']|round(4) }}</td>
+                    <td>{{ kfold_aggregates['Rata-rata F1-Score']|round(4) }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+<!-- Footer -->
+<div class="footer">
+    <p>Designed by Adjie Hari Fajar</p>
+</div>
+</body>
+
+</html>

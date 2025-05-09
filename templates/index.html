@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adjie Hari Fajar - Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+  <header>
+    <h1>Adjie Hari Fajar, S.Kom</h1>
+  </header>
+
+  <div class="container">
+    <div class="profile">
+      <div class="profile-img">
+        <img src="{{ url_for('static', filename='img/ahf.jpg') }}" alt="Ahf Image">
+      </div>
+      <div class="profile-info">
+        <p><strong>Nama:</strong> Adjie Hari Fajar</p>
+        <p><strong>Alamat:</strong> Purbayasa village, Tonjong District, Brebes Regency</p>
+        <p><strong>Tempat, Tanggal Lahir:</strong> Sukabumi Jawa Barat, March 02, 2000</p>
+        <p>I am Adjie Hari Fajar is a tech enthusiast and informatics graduate with strong experience in python programmer, data analyst, data engginer, data scientist, test website and api automation, web developer, machine learning & deep learning. Known for being proactive, innovative and collaborative in both individual and team settings.</p>
+      </div>
+    </div>
+
+    <section>
+      <div class="section-title">Education</div>
+      <p><strong>2019 - 2023:</strong> Universitas Peradaban Bumiayu, S1-Informatika (IPK/GAP 3.31)</p>
+    </section>
+
+    <section>
+      <div class="section-title">Tech Stack</div>
+      <div class="tech-stack">
+        <img src="{{ url_for('static', filename='img/stack/mikrotik.png') }}" alt="Mikrotik">
+        <img src="{{ url_for('static', filename='img/stack/rapidminer.png') }}" alt="RapidMiner">
+        <img src="{{ url_for('static', filename='img/stack/mysql.png') }}" alt="MySQL">
+        <img src="{{ url_for('static', filename='img/stack/nosql.png') }}" alt="NOSQL">
+        <img src="{{ url_for('static', filename='img/stack/python.png') }}" alt="Python">
+        <img src="{{ url_for('static', filename='img/stack/php.png') }}" alt="PHP">
+        <img src="{{ url_for('static', filename='img/stack/js.png') }}" alt="JavaScript">
+        <img src="{{ url_for('static', filename='img/stack/excel.png') }}" alt="Excel">
+        <img src="{{ url_for('static', filename='img/stack/word.png') }}" alt="Word">
+        <img src="{{ url_for('static', filename='img/stack/ppt.png') }}" alt="PowerPoint">
+        <img src="{{ url_for('static', filename='img/stack/gls.png') }}" alt="Google Looker Studio">
+        <img src="{{ url_for('static', filename='img/stack/p_bi.png') }}" alt="Power BI">
+        <img src="{{ url_for('static', filename='img/stack/tableau.png') }}" alt="Tableau">
+      </div>
+    </section>
+
+    <section>
+      <div class="section-title">Hard Skills</div>
+      <ul>
+        <li>Data Analyst</li>
+        <li>Data Engineer</li>
+        <li>Data Scientist</li>
+        <li>Python Developer</li>
+        <li>Web Programmer</li>
+        <li>Quality Assurance (QA)</li>
+        <li>Machine Learning & Deep Learning</li>
+        <li>IT Support</li>
+        <li>Excel, Word & PPT</li>
+      </ul>
+    </section>
+
+    <section>
+      <div class="section-title">Soft Skills</div>
+      <ul>
+        <li>Communication</li>
+        <li>Team Work</li>
+        <li>Problem Solving</li>
+        <li>Critical Thinking</li>
+        <li>Active</li>
+        <li>Innovative</li>
+      </ul>
+    </section>
+
+    <section>
+      <div class="section-title">Experience</div>
+      <ul>
+        <li>2021: Surveyor at Politika Research Consulting</li>
+        <li>2022: Surveyor at Pandawa Research</li>
+        <li>2024: Planning, Data and Information Division of the Sub-district Election Committee (PPK) for the 2024 REGIONAL ELECTION</li>
+      </ul>
+    </section>
+
+    <section>
+      <div class="section-title">Organization</div>
+      <p>2020 - 2024: Himpunan Mahasiswa Islam (HMI) Cabang Brebes</p>
+    </section>
+
+  <!-- Tambahkan ini setelah section Organization -->
+  <section>
+    <div class="section-title">My Project</div>
+
+    <div class="project">
+      <h3>Project 1: Deteksi Stunting</h3>
+      <img src="{{ url_for('static', filename='img/project/project1.png') }}" alt="Project 1" class="project-img">
+      <p>Aplikasi berbasis web untuk memprediksi stunting menggunakan model algoritma C4.5 yang dibangun dari data stunting yang diperoleh dari Dinas Kesehatan Kabupaten Brebes Jawa Tengah.</p>
+      <a href="index_c45" class="btn">Deteksi Stunting</a>
+    </div>
+
+    <div class="project">
+      <h3>Project 2: KNN Nutrition Classification</h3>
+      <img src="{{ url_for('static', filename='img/project/project2.png') }}" alt="Project 2" class="project-img">
+      <p>Web-based application to classify patient nutrition using the KNN (K-Nearest Neighbors) algorithm model built from nutritional data obtained from the Brebes Regency Health Office, Central Java. The dataset was subjected to data transformation, then validated using K-Fold Cross Validation to find the Best KNN Model with the highest accuracy. tech stack Python, HTML, CSS, Flask.</p>
+      <a href="index_gizi" class="btn">Classification of Nutritional Status</a>
+    </div>
+
+    <div class="project">
+      <h3>Project 3: Breast Cancer Prediction using SVM</h3>
+      <img src="{{ url_for('static', filename='img/project/project3.png') }}" alt="Project 3" class="project-img">
+      <p>Web-based application for breast cancer prediction using the Support Vector Machine algorithm, with the dataset used obtained from the kaggle site. The dataset was subjected to data transformation and feature selection stages, then validated using K-Fold Cross Validation to find the Best SVM Model with the highest accuracy. tech stack Python, HTML, CSS, Flask</p>
+      <a href="index_kp" class="btn">Breast Cancer Prediction</a>
+    </div>
+  </section>
+
+    <section>
+      <div class="section-title">Contact</div>
+      <div class="contact">
+        <p>📞 082327282220</p>
+        <p>📧 adjieharifajar2301@gmail.com</p>
+        <p>📸 IG: @bang_jie231</p>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    &copy; 2025 Adjie Hari Fajar. All Rights Reserved.
+  </footer>
+</body>
+
+</html>

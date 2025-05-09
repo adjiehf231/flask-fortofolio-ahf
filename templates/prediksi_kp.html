@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediksi Kanker Payudara</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style_kp.css') }}">
+</head>
+<body>
+    <div class="overlay"></div>
+    <div class="container">
+        <nav class="navigation">
+            <a href="/">🏠 Kembali Ke Portofolio</a>
+            <a href="/index_kp">🏠 Beranda</a>
+            <a href="/prediksi_kp">📊 Prediksi Kangker Payudara</a>
+            <a href="/informasi_kp">📊 Informasi Model</a>
+        </nav>
+    <h1 class="text-center">🔬 Prediksi Kanker Payudara</h1>
+    
+    <form action="/hasil_prediksi_kp" method="post" class="mt-4">
+        <div class="row">
+            {% for feature in ["perimeter_worst", "area_worst", "radius_worst", "concave points_mean", "concave points_worst", "perimeter_mean", "concavity_mean", "radius_mean", "area_mean", "area_se", "concavity_worst", "perimeter_se", "radius_se", "compactness_worst", "compactness_mean"] %}
+            <div class="col-md-6">
+                <label class="form-label">{{ feature.replace("_", " ").title() }}</label>
+                <input type="number" step="0.0001" min="0" class="form-control" name="{{ feature }}" required>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="d-flex justify-content-end">
+            <button type="submit" class="btn btn-primary mt-3">🔍 Prediksi</button>
+        </div>        
+    </form>
+
+    {% if hasil %}
+    <h2 class="mt-5 text-center">📋 Hasil Prediksi</h2>
+    <table class="table table-bordered text-center">
+        <thead class="table-info">
+            <tr>
+                <th>Fitur</th>
+                <th>Nilai Input</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for feature, value in input_data.items() %}
+            <tr>
+                <td>{{ feature.replace("_", " ").title() }}</td>
+                <td>{{ value }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+    <h3 class="text-center mt-3">🩺 Diagnosis: 
+        <strong>{{ hasil }}</strong> 
+        <span class="badge bg-info text-dark">Akurasi Best Model SVM: {{ akurasi }}%</span>
+    </h3>
+    {% endif %}
+</body>
+</html>

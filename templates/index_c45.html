@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Selamat Datang di Aplikasi Prediksi Stunting</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style_c45.css') }}">
+</head>
+<body>
+    <div class="navigation">
+        <a href="/">🏠 Kembali Ke Portofolio</a>
+        <a href="/index_c45">🏠 Beranda</a>
+        <a href="/prediksi_c45">📊 Prediksi Stunting</a>
+        <a href="/informasi_c45">📊 Informasi Model C45</a>
+
+    </div>
+    <h1>Selamat Datang</h1>
+    <h1>Di Aplikasi Prediksi Stunting</h1>
+    <h1>Untuk Balita Usia 0-24 Bulan</h1>
+    
+    <!-- Pengantar Stunting -->
+    <div class="pengantar">
+        <h2>Pengantar Stunting:</h2>
+        <img src="{{ url_for('static', filename='img/stunting.png') }}" alt="Stunting Image">
+        <p>Stunting adalah kondisi gagal tumbuh optimal pada anak-anak yang biasanya terjadi pada periode 1.000 hari pertama kehidupan, mulai dari kehamilan hingga dua tahun pertama kehidupan. Stunting dapat terjadi ketika anak tidak menerima nutrisi yang cukup untuk mendukung pertumbuhan dan perkembangannya secara optimal. Penyebab stunting melibatkan faktor-faktor seperti gizi buruk, infeksi kronis, dan lingkungan yang tidak mendukung pertumbuhan anak.</p>
+        <p>Penyebab Stunting;
+            Penyebab utama stunting adalah malnutrisi dalam jangka panjang (kronis). Beberapa kondisi yang bisa menyebabkan anak kekurangan nutrisi adalah:
+            Ibu mengalami malnutrisi atau terserang infeksi selama hamil
+            Anak tidak mendapatkan ASI eksklusif
+            Kualitas gizi MPASI yang kurang
+            Anak menderita penyakit yang menghalangi penyerapan nutrisi, seperti alergi susu sapi atau sindrom malabsorbsi
+            Anak menderita infeksi kronis, seperti tuberkulosis atau cacingan
+            Anak memiliki penyakit bawaan, seperti penyakit jantung bawaan atau thalasemia</p>
+        <p>Faktor risiko stunting;
+            Ada faktor-faktor yang bisa meningkatkan risiko anak mengalami stunting, antara lain:
+            Terlahir prematur
+            Terlahir dengan berat badan rendah
+            Mengalami intrauterine growth restriction (IUGR)
+            Tidak mendapatkan vaksin yang lengkap
+            Hidup di tengah kemiskinan
+            Tinggal di lingkungan dengan sanitasi buruk dan tidak mendapatkan akses untuk air bersih</P>
+        <p>Gejala Stunting;
+            Gejala stunting umumnya bisa terlihat saat anak berusia 2 tahun. Namun, hal ini sering tidak disadari, atau malah disalahartikan sebagai perawakan pendek yang normal.
+            Gejala dan tanda-tanda yang bisa menunjukkan anak mengalami stunting adalah:
+            Tinggi badan anak lebih pendek daripada tinggi badan anak seusianya
+            Berat badan tidak meningkat secara konsisten
+            Tahap perkembangan yang terlambat dibandingkan anak seusianya
+            Tidak aktif bermain
+            Sering lemas
+            Mudah terserang penyakit, terutama infeksi</p>
+        <p>Pengobatan Stunting;
+            Pengobatan stunting adalah dengan mengatasi penyakit penyebabnya, memperbaiki asupan nutrisi, memberikan suplemen, serta menerapkan pola hidup bersih dan sehat. Berikut adalah tindakan yang dapat dilakukan oleh dokter:
+            Mengobati penyakit yang mendasarinya, misalnya memberikan obat-obatan antituberkulosis bila anak menderita TBC
+            Memberikan suplemen vitamin A, zinc, zat besi, kalsium, dan yodium
+            Memberikan penyuluhan kepada orang tua agar memenuhi kebutuhan nutrisi anak
+            Keberhasilan pengobatan stunting pada anak juga sangat bergantung pada upaya orang tua dan keluarga. Upaya yang dapat dilakukan adalah:
+            Memberikan nutrisi yang tepat dan lengkap lewat MPASI atau makanan pokok, berupa makanan yang kaya protein hewani, lemak, dan kalori
+            Membawa anak untuk kontrol rutin ke dokter jika ia menderita penyakit kronis
+            Memeriksakan tinggi dan berat badan anak secara berkala
+            Memperbaiki sanitasi di rumah dan menerapkan perilaku hidup bersih dan sehat (PHBS) guna mencapai keluarga yang sehat</p>
+    </div>
+
+    <!-- Pengantar Data Mining -->
+    <div class="pengantar">
+        <h2>Pengantar Data Mining:</h2>
+        <img src="{{ url_for('static', filename='img/data_mining.png') }}" alt="Data Mining Image">
+        <p>Data mining adalah proses ekstraksi pola atau pengetahuan yang berguna dari dataset yang besar atau kompleks. Tujuan utama dari data mining adalah mengidentifikasi hubungan, tren, dan pola yang tidak terlihat secara langsung dalam data mentah. Metode ini melibatkan berbagai teknik statistik, matematika, dan kecerdasan buatan untuk menganalisis dan menginterpretasi data. Fungsi utama data mining termasuk identifikasi pola tersembunyi, klasifikasi data ke dalam kelompok atau kategori, prediksi hasil berdasarkan data yang ada, dan pengoptimalkan proses bisnis. Data mining digunakan dalam berbagai bidang seperti keuangan, pemasaran, kesehatan, dan ilmu pengetahuan. Proses data mining melibatkan beberapa langkah, termasuk pemilihan dan persiapan data, pemodelan dan pemilihan metode analisis, evaluasi model, dan interpretasi hasil. Teknik data mining melibatkan algoritma seperti regresi, pohon keputusan, k-means clustering, dan lainnya.</p>
+    </div>
+
+    <!-- Pengantar C4.5 -->
+    <div class="pengantar">
+        <h2>Pengantar Algoritma C4.5:</h2>
+        <img src="{{ url_for('static', filename='img/c45.png') }}" alt="C4.5 Image">
+        <p>C4.5, atau Classification and Regression Trees, adalah salah satu algoritma pohon keputusan yang digunakan dalam data mining. Algoritma ini dikembangkan oleh Ross Quinlan dan dapat digunakan untuk klasifikasi dan regresi berbasis pohon keputusan. C4.5 bekerja dengan membagi dataset menjadi subset yang lebih kecil berdasarkan atribut tertentu hingga mencapai kondisi berhenti yang telah ditentukan. Proses C4.5 dimulai dengan memilih atribut yang paling informatif untuk membagi dataset. Kemudian, algoritma akan membuat node keputusan berdasarkan atribut tersebut. Proses ini diulangi untuk setiap subset yang dihasilkan dari pembagian sebelumnya hingga mencapai daun (leaf) yang berisi label klasifikasi atau nilai regresi. Fungsi C4.5 melibatkan pembuatan model pohon keputusan yang dapat digunakan untuk klasifikasi data. Pohon ini dapat dengan mudah diinterpretasi oleh manusia, sehingga cocok untuk analisis eksploratif. C4.5 juga memiliki mekanisme penanganan nilai yang hilang dan mampu mengatasi dataset dengan atribut kategorikal.</p>
+    </div>
+<!-- Footer -->
+<div class="footer">
+    <p>Designed by Adjie Hari Fajar</p>
+</div>
+</body>
+</html>
