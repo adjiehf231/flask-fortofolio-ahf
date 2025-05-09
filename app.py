@@ -147,5 +147,4 @@ def prediksi_gizi():
     return render_template("prediksi_gizi.html")
 
 if __name__ == "__main__":
-    app.run(debug=True)
-
+        app.run(debug=True)
